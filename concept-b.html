@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skitii | Hero concept B: signal-first layout</title>
+<meta name="description" content="Skitii is an investigational HRV-adaptive music therapy device designed to support anxiety management in oncology care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#142C46;--teal:#17A9A0;--teal-lt:#7FE0D8;--aqua:#E8F7F5;--slate:#536477;--mute:#C6D3E0;--edge:#2A4663;--r-sm:999px}
+*{box-sizing:border-box;margin:0}
+body{font-family:Manrope,Inter,system-ui,sans-serif;background:var(--navy);color:#fff;line-height:1.6;font-size:clamp(1rem,.96rem + .2vw,1.125rem);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal-lt);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--navy);padding:.6rem 1rem;border-radius:8px;z-index:20}
+.skip:focus{left:8px}
+.hero-b{position:relative;overflow:hidden;background:radial-gradient(55% 70% at 88% 0%,rgba(23,169,160,.30),transparent 62%),radial-gradient(40% 50% at 0% 100%,rgba(23,169,160,.12),transparent 60%),var(--navy)}
+
+/* Header */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;position:relative}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:-.02em}
+.logo svg{width:32px;height:32px}.logo sup{font-size:.55em;color:var(--mute);font-weight:600}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--mute);padding:.5rem 0;border-bottom:2px solid transparent}
+nav a:hover{color:#fff;border-color:var(--teal)}
+.menu-btn{display:none;min-width:48px;min-height:48px;border:1.5px solid #fff;background:none;border-radius:12px;cursor:pointer;color:#fff;place-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.7rem 1.6rem;border-radius:var(--r-sm);font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s}
+.btn-primary{background:var(--teal);color:var(--navy)}.btn-primary:hover{background:#2BC0B6;transform:translateY(-1px)}
+.btn-ghost{border-color:#fff;color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Intro */
+.intro{padding:clamp(2.5rem,7vw,5.5rem) 0 clamp(2rem,4vw,3.2rem);display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(1.5rem,4vw,4rem);align-items:end}
+.badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--edge);border-radius:var(--r-sm);padding:.35rem .9rem;font-size:.85rem;font-weight:600;color:var(--mute)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+h1{font-size:clamp(2.3rem,1rem + 5.2vw,4.9rem);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:1.2rem 0 0;max-width:13ch}
+.side p{color:var(--mute);font-size:clamp(1.05rem,1rem + .3vw,1.2rem);max-width:40ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.6rem}
+
+/* Signal stage */
+.stage{border:1px solid var(--edge);border-radius:28px;background:rgba(255,255,255,.04);padding:clamp(1.1rem,3vw,2rem)}
+.stage-top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:#B8C7D6;font-weight:600}
+.live{display:flex;align-items:center;gap:.5rem;color:#fff}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--teal);animation:pulse 1.8s infinite}
+svg.trace{width:100%;height:150px;display:block;margin:1.2rem 0 1.8rem}
+.trace line{stroke:var(--edge);stroke-width:1}
+.trace path{fill:none;stroke:var(--teal);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.trace.go path{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 4.2s cubic-bezier(.4,0,.2,1) forwards}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,3vw,2.5rem);list-style:none;padding:0}
+.steps li{position:relative;border-top:2px solid var(--edge);padding-top:1.5rem}
+.steps li::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(23,169,160,.25)}
+.steps h3{display:flex;align-items:center;gap:.7rem;font-size:1.25rem;letter-spacing:-.02em;margin-bottom:.4rem}
+.steps h3 span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--teal);color:var(--navy);font-size:.9rem;font-weight:800}
+.steps p{color:var(--mute);font-size:.95rem;max-width:34ch}
+
+/* Credentials */
+.creds{display:flex;flex-wrap:wrap;gap:.7rem 2.2rem;list-style:none;padding:1.8rem 0 2.4rem;font-size:.9rem;font-weight:600;color:var(--mute)}
+.creds li{display:flex;align-items:center;gap:.5rem}
+.creds svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--teal-lt);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pulse{50%{opacity:.35;transform:scale(.8)}}
+@media (max-width:960px){.intro{grid-template-columns:1fr;align-items:start}h1{max-width:16ch}}
+@media (max-width:720px){
+  .wrap{width:min(1160px,100% - 2rem)}
+  .bar{min-height:64px}
+  .menu-btn{display:grid}
+  nav{position:absolute;inset:64px 0 auto 0;background:var(--navy);border:1px solid var(--edge);border-radius:16px;padding:.4rem 1.2rem 1rem;z-index:5}
+  nav[hidden]{display:none}
+  nav ul{flex-direction:column;gap:0}
+  nav a{display:block;padding:1rem 0;border-bottom:1px solid var(--edge);font-size:1.05rem}
+  .bar>.btn{display:none}
+  .badge{display:flex;border-radius:14px;line-height:1.4;padding:.5rem .9rem}
+  .cta-row .btn{width:100%}
+  svg.trace{height:110px;margin-bottom:1.4rem}
+  .stage{border-radius:20px}
+  .steps{grid-template-columns:1fr;gap:0}
+  .steps li{border-top:0;border-left:2px solid var(--edge);padding:0 0 1.5rem 1.4rem}
+  .steps li:last-child{padding-bottom:0}
+  .steps li::before{top:.35rem;left:-7px}
+  .creds{flex-direction:column;gap:.8rem}
+}
+@media (min-width:721px){nav[hidden]{display:block}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.trace.go path{stroke-dasharray:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#hero-b">Skip to main content</a>
+<div class="hero-b">
+  <header class="wrap bar">
+    <a class="logo" href="#" aria-label="Skitii home">
+      <!-- Placeholder mark: swap with the official Skitii logo asset -->
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#17A9A0"/><path d="M5 17h5l3-7 4 13 3-9 2 3h5" fill="none" stroke="#142C46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Skitii<sup>®</sup></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+    </button>
+    <nav id="nav" aria-label="Primary" hidden>
+      <ul>
+        <li><a href="#">What we do</a></li><li><a href="#">Why we do it</a></li><li><a href="#">How it works</a></li><li><a href="#">Our story</a></li><li><a href="#">Why trust us</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="#">Request a clinical demo</a>
+  </header>
+
+  <main id="hero-b" class="wrap" aria-labelledby="hb-title">
+    <section class="intro">
+      <div>
+        <span class="badge"><i></i>Investigational device · Clinical evaluation in progress</span>
+        <h1 id="hb-title">Music that listens to the heartbeat.</h1>
+      </div>
+      <div class="side">
+        <p>Skitii is an investigational HRV-adaptive music therapy device designed to support anxiety management in oncology care.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#">Request a clinical demo</a>
+          <a class="btn btn-ghost" href="#stage">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage" id="stage" aria-label="How a Skitii session works">
+      <div class="stage-top"><span class="live"><i></i>Session signal</span><span>Illustrative graphic. Not patient data.</span></div>
+      <svg class="trace" id="trace" role="img" aria-label="Animated heartbeat trace with beats gradually spacing out" preserveAspectRatio="none">
+        <line x1="0" x2="100%" y1="40" y2="40"/><line x1="0" x2="100%" y1="80" y2="80"/><line x1="0" x2="100%" y1="120" y2="120"/>
+        <path id="tracePath" d=""/>
+      </svg>
+      <ol class="steps">
+        <li><h3><span>1</span>Sense</h3><p>A chest-strap sensor measures heart rate variability (HRV) during treatment.</p></li>
+        <li><h3><span>2</span>Adapt</h3><p>RMSSD from the HRV signal guides AI-generated instrumental music in real time.</p></li>
+        <li><h3><span>3</span>Record</h3><p>Session signals are logged for the care team to review. <em>Placeholder copy: confirm wording.</em></p></li>
+      </ol>
+    </section>
+
+    <ul class="creds" aria-label="Credentials">
+      <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2l6 2.5v5c0 4-2.6 6.8-6 8-3.4-1.2-6-4-6-8v-5z"/><path d="M7 10l2.2 2.2L13 8"/></svg>ISO 13485:2016 certified</li>
+      <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M6 10h8"/></svg>Non-pharmacological</li>
+      <li><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="3"/><path d="M7 10h6M10 7v6"/></svg>CDSCO Class B licensing in progress</li>
+    </ul>
+  </main>
+</div>
+
+<script>
+(function(){
+  var svg=document.getElementById("trace"),path=document.getElementById("tracePath");
+  var beat=[[0,80],[5,80],[8,70],[11,80],[15,80],[17,88],[20,20],[24,116],[27,80],[34,80],[40,64],[46,80]];
+  function build(replay){
+    var w=Math.max(300,Math.round(svg.getBoundingClientRect().width)),pts=[],x=0,gap=w<500?26:30,step=w<500?1.6:2.1;
+    svg.setAttribute("viewBox","0 0 "+w+" 150");
+    while(x<w){beat.forEach(function(p){pts.push((x+p[0])+" "+p[1])});x+=gap;gap+=step}
+    path.setAttribute("d","M"+pts.join(" L"));
+    svg.style.setProperty("--len",Math.ceil(path.getTotalLength()));
+    if(replay){svg.classList.remove("go");void svg.getBoundingClientRect();svg.classList.add("go")}
+    else if(!svg.classList.contains("go")){svg.classList.add("go")}
+  }
+  build(true);
+  var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(function(){build(false)},150)});
+
+  var btn=document.querySelector(".menu-btn"),nav=document.getElementById("nav"),mq=window.matchMedia("(min-width:721px)");
+  function sync(){nav.hidden=mq.matches?false:btn.getAttribute("aria-expanded")!=="true"}
+  btn.addEventListener("click",function(){
+    var open=btn.getAttribute("aria-expanded")==="true";
+    btn.setAttribute("aria-expanded",String(!open));btn.setAttribute("aria-label",open?"Open menu":"Close menu");sync();
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&btn.getAttribute("aria-expanded")==="true"){btn.click();btn.focus()}});
+  (mq.addEventListener?mq.addEventListener("change",sync):mq.addListener(sync));sync();
+})();
+</script>
+</body>
+</html>

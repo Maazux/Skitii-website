@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skitii design system v1.0</title>
+<meta name="description" content="Colour, type, spacing, component and language rules for the Skitii website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#142C46;--teal:#17A9A0;--teal-hv:#2BC0B6;--teal-ink:#0C6F69;--teal-lt:#7FE0D8;--aqua:#E8F7F5;--white:#fff;--slate:#536477;--mute:#C6D3E0;--edge:#2A4663;--line:#D5E3E8;--field:#7B91A0;--error:#B3261E}
+*{box-sizing:border-box;margin:0}
+body{font-family:Manrope,Inter,system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:1rem;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:var(--teal-ink);font-weight:700}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+header.top{background:var(--navy);color:#fff;padding:clamp(2.5rem,6vw,4.5rem) 0 2rem}
+header.top h1{font-size:clamp(2.2rem,1.4rem + 4vw,4rem);line-height:1.06;letter-spacing:-.035em;font-weight:800}
+header.top p{color:var(--mute);max-width:62ch;margin-top:1rem}
+.jump{display:flex;gap:.5rem;overflow-x:auto;margin-top:1.8rem;padding-bottom:.4rem;list-style:none}
+.jump a{white-space:nowrap;text-decoration:none;color:#fff;border:1px solid var(--edge);border-radius:999px;padding:.45rem 1rem;font-size:.9rem;font-weight:600;display:inline-block;min-height:40px}
+.jump a:hover{background:rgba(255,255,255,.1)}
+section{padding:clamp(2.5rem,6vw,4.5rem) 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,1.3rem + 1vw,2.1rem);letter-spacing:-.025em;line-height:1.15;font-weight:800}
+h3{font-size:1.1rem;font-weight:800;margin-bottom:.6rem}
+.lead{color:var(--slate);max-width:64ch;margin:.7rem 0 2rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.sw{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.sw .c{height:84px}.sw div+div{padding:.8rem .9rem}
+.sw b{display:block}.sw code,.tok{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--slate)}
+.sw small{display:block;color:var(--slate);font-size:.82rem;line-height:1.4;margin-top:.2rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:.1rem .6rem;background:var(--aqua);color:var(--teal-ink);margin-left:.4rem;vertical-align:middle}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--line);vertical-align:middle}
+th{background:var(--aqua);font-size:.85rem}tr:last-child td{border-bottom:0}
+.aa{display:inline-grid;place-items:center;min-width:88px;height:44px;border-radius:10px;font-weight:800;font-size:1.1rem}
+.pass{color:var(--teal-ink);font-weight:800}.fail{color:var(--error);font-weight:800}
+.row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.demo{border:1px solid var(--line);border-radius:14px;padding:1.4rem;background:#fff}
+.demo.dark{background:var(--navy);border-color:var(--navy);color:#fff}
+.demo.tint{background:var(--aqua);border-color:var(--aqua)}
+.cols{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cap{font-size:.8rem;color:var(--slate);margin-top:.6rem}.dark .cap{color:var(--mute)}
+pre{background:var(--navy);color:var(--mute);border-radius:14px;padding:1.2rem;overflow-x:auto;font-size:.8rem;line-height:1.6;font-family:ui-monospace,Menlo,monospace}
+
+/* Type specimens */
+.t-disp{font-size:clamp(2.2rem,1.4rem + 4vw,4rem);line-height:1.06;letter-spacing:-.035em;font-weight:800}
+.t-h2{font-size:clamp(1.5rem,1.3rem + 1vw,2.1rem);line-height:1.15;letter-spacing:-.025em;font-weight:800}
+.t-h3{font-size:1.25rem;line-height:1.25;letter-spacing:-.02em;font-weight:700}
+.t-lead{font-size:clamp(1.05rem,1rem + .3vw,1.25rem);color:var(--slate)}
+.t-body{font-size:clamp(1rem,.96rem + .2vw,1.125rem)}
+.t-small{font-size:.9rem;color:var(--slate)}
+
+/* Components */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.7rem 1.6rem;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;font-family:inherit;cursor:pointer}
+.btn-p{background:var(--teal);color:var(--navy)}.btn-p.hv{background:var(--teal-hv)}
+.btn-g{border-color:var(--navy);color:var(--navy);background:transparent}.btn-g.hv{background:var(--aqua)}
+.btn-gd{border-color:#fff;color:#fff;background:transparent}.btn-gd.hv{background:rgba(255,255,255,.12)}
+.btn.fc{outline:3px solid var(--teal);outline-offset:3px}.dark .btn.fc{outline-color:var(--teal-lt)}
+.btn.dis{background:#E3EAEE;color:#6B7C89;cursor:not-allowed}
+.f{display:grid;gap:.4rem;max-width:320px}.f label{font-weight:700;font-size:.92rem}
+.in{font:inherit;color:var(--navy);padding:.75rem 1rem;min-height:48px;border:1.5px solid var(--field);border-radius:12px;background:#fff}
+.in.fc{outline:3px solid var(--teal);outline-offset:2px}.in.er{border-color:var(--error)}
+.msg{font-size:.85rem;color:var(--error)}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;font-size:.85rem;font-weight:600;color:var(--slate)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.4rem;max-width:300px}
+.tint .card{border-color:transparent}.card p{color:var(--slate);font-size:.95rem}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--aqua);color:var(--teal-ink);display:grid;place-items:center;margin-bottom:.9rem}
+.ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tab{display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:.8rem 1rem;min-height:72px;width:270px;font-weight:800}
+.tab .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--aqua);color:var(--teal-ink)}
+.tab.on{border-color:var(--teal);background:var(--aqua)}.tab.on .n{background:var(--navy);color:#fff}
+.nav-s{display:flex;gap:1.6rem;font-weight:600;font-size:.95rem}
+.nav-s span{color:var(--slate);padding:.5rem 0;border-bottom:2px solid transparent}.nav-s .cur{color:var(--navy);border-color:var(--teal)}
+.stat{font-size:3rem;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--teal-lt)}
+.space{display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.space div{text-align:center;font-size:.75rem;color:var(--slate)}.space i{display:block;background:var(--teal);border-radius:3px;margin-bottom:.4rem;margin-inline:auto}
+.rad{width:88px;height:64px;background:var(--aqua);border:2px solid var(--teal);display:grid;place-items:center;font-size:.8rem;font-weight:700}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.dd div{border-radius:14px;padding:1.2rem}.dd .do{background:var(--aqua)}.dd .dont{background:#FBECEA}
+.dd h3{margin-bottom:.4rem}.dd ul{padding-left:1.1rem;font-size:.95rem}.dd li+li{margin-top:.35rem}
+footer{padding:2rem 0 3rem;color:var(--slate);font-size:.85rem}
+@media (max-width:720px){.wrap{width:min(1160px,100% - 2rem)}.dd{grid-template-columns:1fr}.nav-s{flex-wrap:wrap;gap:.6rem 1.2rem}.tab{width:100%}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Skitii design system</h1>
+    <p>Version 1.0 for the homepage concepts. Built from the provisional palette in the candidate brand guide. The official Skitii logo, fonts and assets take precedence over every value on this page.</p>
+    <ul class="jump" aria-label="Sections">
+      <li><a href="#colour">Colour</a></li><li><a href="#type">Type</a></li><li><a href="#space">Spacing and shape</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#forms">Forms</a></li><li><a href="#components">Components</a></li><li><a href="#motion">Visuals and motion</a></li><li><a href="#language">Language</a></li><li><a href="#tokens">Tokens</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section id="colour"><div class="wrap">
+  <h2>Colour</h2>
+  <p class="lead">Five brand colours from the guide, plus five derived values added so text and focus states pass WCAG AA. Derived values are marked.</p>
+  <div class="grid">
+    <div class="sw"><div class="c" style="background:#142C46"></div><div><b>Deep navy</b><code>#142C46</code><small>Headings, body, navigation, dark sections</small></div></div>
+    <div class="sw"><div class="c" style="background:#17A9A0"></div><div><b>Skitii teal</b><code>#17A9A0</code><small>Primary buttons, trace, accents. Not for small text on white.</small></div></div>
+    <div class="sw"><div class="c" style="background:#E8F7F5"></div><div><b>Soft aqua</b><code>#E8F7F5</code><small>Quiet section backgrounds, selected states</small></div></div>
+    <div class="sw"><div class="c" style="background:#fff;border-bottom:1px solid #D5E3E8"></div><div><b>White</b><code>#FFFFFF</code><small>Primary background</small></div></div>
+    <div class="sw"><div class="c" style="background:#536477"></div><div><b>Slate grey</b><code>#536477</code><small>Secondary text on light</small></div></div>
+    <div class="sw"><div class="c" style="background:#0C6F69"></div><div><b>Teal ink</b><span class="tag">derived</span><code>#0C6F69</code><small>Links, icons and small teal text on light</small></div></div>
+    <div class="sw"><div class="c" style="background:#7FE0D8"></div><div><b>Teal light</b><span class="tag">derived</span><code>#7FE0D8</code><small>Links and stats on navy</small></div></div>
+    <div class="sw"><div class="c" style="background:#2BC0B6"></div><div><b>Teal hover</b><span class="tag">derived</span><code>#2BC0B6</code><small>Primary button hover. Keeps navy text above 6:1.</small></div></div>
+    <div class="sw"><div class="c" style="background:#C6D3E0"></div><div><b>Mist</b><span class="tag">derived</span><code>#C6D3E0</code><small>Secondary text on navy</small></div></div>
+    <div class="sw"><div class="c" style="background:#B3261E"></div><div><b>Error</b><span class="tag">derived</span><code>#B3261E</code><small>Form errors only, always with text</small></div></div>
+  </div>
+  <h3 style="margin-top:2.2rem">Contrast pairs (WCAG 2.1, computed)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Sample</th><th>Foreground on background</th><th>Ratio</th><th>AA text (4.5:1)</th><th>Use</th></tr></thead>
+    <tbody>
+    <tr><td><span class="aa" style="background:#fff;color:#142C46;border:1px solid #D5E3E8">Aa</span></td><td>Navy on white</td><td>14.2:1</td><td class="pass">Pass</td><td>Headings, body</td></tr>
+    <tr><td><span class="aa" style="background:#E8F7F5;color:#142C46">Aa</span></td><td>Navy on aqua</td><td>12.89:1</td><td class="pass">Pass</td><td>Text on tinted sections</td></tr>
+    <tr><td><span class="aa" style="background:#fff;color:#536477;border:1px solid #D5E3E8">Aa</span></td><td>Slate on white</td><td>6.07:1</td><td class="pass">Pass</td><td>Secondary text</td></tr>
+    <tr><td><span class="aa" style="background:#E8F7F5;color:#536477">Aa</span></td><td>Slate on aqua</td><td>5.51:1</td><td class="pass">Pass</td><td>Secondary text on tint</td></tr>
+    <tr><td><span class="aa" style="background:#17A9A0;color:#142C46">Aa</span></td><td>Navy on teal</td><td>4.88:1</td><td class="pass">Pass</td><td>Primary button label</td></tr>
+    <tr><td><span class="aa" style="background:#2BC0B6;color:#142C46">Aa</span></td><td>Navy on teal hover</td><td>6.3:1</td><td class="pass">Pass</td><td>Primary button hover</td></tr>
+    <tr><td><span class="aa" style="background:#fff;color:#0C6F69;border:1px solid #D5E3E8">Aa</span></td><td>Teal ink on white</td><td>6.01:1</td><td class="pass">Pass</td><td>Links, icons on light</td></tr>
+    <tr><td><span class="aa" style="background:#E8F7F5;color:#0C6F69">Aa</span></td><td>Teal ink on aqua</td><td>5.45:1</td><td class="pass">Pass</td><td>Links on tint</td></tr>
+    <tr><td><span class="aa" style="background:#142C46;color:#7FE0D8">Aa</span></td><td>Teal light on navy</td><td>9.17:1</td><td class="pass">Pass</td><td>Links, stats on dark</td></tr>
+    <tr><td><span class="aa" style="background:#142C46;color:#C6D3E0">Aa</span></td><td>Mist on navy</td><td>9.33:1</td><td class="pass">Pass</td><td>Secondary text on dark</td></tr>
+    <tr><td><span class="aa" style="background:#142C46;color:#17A9A0">Aa</span></td><td>Teal on navy</td><td>4.88:1</td><td class="pass">Pass</td><td>Heartbeat trace, large accents</td></tr>
+    <tr><td><span class="aa" style="background:#fff;color:#B3261E;border:1px solid #D5E3E8">Aa</span></td><td>Error on white</td><td>6.54:1</td><td class="pass">Pass</td><td>Error messages</td></tr>
+    <tr><td><span class="aa" style="background:#fff;color:#fff;border:1px solid #D5E3E8;box-shadow:inset 0 0 0 40px #17A9A0">Aa</span></td><td>White on teal</td><td>2.91:1</td><td class="fail">Fail</td><td>Never use</td></tr>
+    <tr><td><span class="aa" style="background:#fff;color:#17A9A0;border:1px solid #D5E3E8">Aa</span></td><td>Teal on white</td><td>2.91:1</td><td class="fail">Fail</td><td>Never for text or icons. Use teal ink.</td></tr>
+    </tbody></table></div>
+  <p class="cap">Form field borders (#7B91A0 on white, 3.28:1) meet the 3:1 minimum for interface components.</p>
+</div></section>
+
+<section id="type"><div class="wrap">
+  <h2>Typography</h2>
+  <p class="lead">Manrope, one family at weights 400 to 800. Inter is the fallback. Swap in the official brand font if supplied. Sizes use fluid clamp values, so one scale serves desktop and mobile. Body line length stays under 70 characters.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Role</th><th>Specimen</th><th>Size (mobile to desktop)</th><th>Weight, spacing</th></tr></thead>
+    <tbody>
+    <tr><td>Display</td><td class="t-disp">Hear the heartbeat</td><td>35 to 64px / 1.06</td><td>800, -0.035em</td></tr>
+    <tr><td>Heading 2</td><td class="t-h2">How Skitii works</td><td>24 to 34px / 1.15</td><td>800, -0.025em</td></tr>
+    <tr><td>Heading 3</td><td class="t-h3">Sense, adapt, record</td><td>20px / 1.25</td><td>700, -0.02em</td></tr>
+    <tr><td>Lead</td><td class="t-lead">A calm, clear introduction.</td><td>17 to 20px / 1.6</td><td>400</td></tr>
+    <tr><td>Body</td><td class="t-body">Skitii adjusts instrumental music as the signal changes.</td><td>16 to 18px / 1.6</td><td>400</td></tr>
+    <tr><td>Small</td><td class="t-small">Illustrative graphic. Not patient data.</td><td>14px / 1.5</td><td>400 to 600</td></tr>
+    </tbody></table></div>
+  <p class="cap">Rules: sentence case everywhere. No all-caps labels. Left-aligned text. Never accent a single word in a headline.</p>
+</div></section>
+
+<section id="space"><div class="wrap">
+  <h2>Spacing and shape</h2>
+  <p class="lead">A 4px base. Sections breathe: 56 to 96px of vertical padding, fluid with the viewport.</p>
+  <div class="cols">
+    <div class="demo"><h3>Spacing scale</h3>
+      <div class="space"><div><i style="width:4px;height:4px"></i>4</div><div><i style="width:8px;height:8px"></i>8</div><div><i style="width:12px;height:12px"></i>12</div><div><i style="width:16px;height:16px"></i>16</div><div><i style="width:24px;height:24px"></i>24</div><div><i style="width:32px;height:32px"></i>32</div><div><i style="width:48px;height:48px"></i>48</div><div><i style="width:64px;height:64px"></i>64</div></div></div>
+    <div class="demo"><h3>Radius</h3>
+      <div class="space"><div><span class="rad" style="border-radius:12px">12</span>Inputs</div><div><span class="rad" style="border-radius:14px">14</span>Cards</div><div><span class="rad" style="border-radius:24px">24</span>Panels</div><div><span class="rad" style="border-radius:999px">Pill</span>Buttons</div></div></div>
+    <div class="demo"><h3>Layout</h3>
+      <p class="t-small">Max content width 1160px. Side gutters 40px on desktop, 32px on mobile. Breakpoints: 960px (tablet, two columns become one) and 720px (mobile, menu button, sticky call-to-action).</p>
+      <h3 style="margin-top:1rem">Elevation</h3><p class="t-small">Shadows only on the hero visual card and the enquiry form. Everything else uses a 1px border.</p></div>
+  </div>
+</div></section>
+
+<section id="buttons"><div class="wrap">
+  <h2>Buttons</h2>
+  <p class="lead">Pill shape, 48px minimum height, 16px bold label. One primary action per view. Labels say exactly what happens.</p>
+  <div class="cols">
+    <div class="demo"><h3>On light</h3>
+      <div class="row"><a class="btn btn-p" href="#">Default</a><a class="btn btn-p hv" href="#">Hover</a><a class="btn btn-p fc" href="#">Focus</a><span class="btn btn-p dis">Disabled</span></div>
+      <div class="row" style="margin-top:1rem"><a class="btn btn-g" href="#">Default</a><a class="btn btn-g hv" href="#">Hover</a><a class="btn btn-g fc" href="#">Focus</a></div></div>
+    <div class="demo dark"><h3>On navy</h3>
+      <div class="row"><a class="btn btn-p" href="#">Default</a><a class="btn btn-p hv" href="#">Hover</a><a class="btn btn-p fc" href="#">Focus</a></div>
+      <div class="row" style="margin-top:1rem"><a class="btn btn-gd" href="#">Default</a><a class="btn btn-gd hv" href="#">Hover</a><a class="btn btn-gd fc" href="#">Focus</a></div></div>
+  </div>
+  <p class="cap">Approved labels: Request a clinical demo, See how it works, Request trial information.</p>
+</div></section>
+
+<section id="forms"><div class="wrap">
+  <h2>Forms</h2>
+  <p class="lead">Visible labels above every field. Errors appear below the field in text and colour, and focus moves to the first error. Fields are 48px tall with 16px text so iOS does not zoom.</p>
+  <div class="cols">
+    <div class="f"><label for="a">Work email</label><input class="in" id="a" placeholder="name@hospital.org"><span class="cap" style="margin:0">Default</span></div>
+    <div class="f"><label for="b">Work email</label><input class="in fc" id="b" value="name@hospital.org"><span class="cap" style="margin:0">Focus</span></div>
+    <div class="f"><label for="c">Work email</label><input class="in er" id="c" value="name@hospital" aria-invalid="true"><span class="msg">Enter a valid work email.</span></div>
+  </div>
+</div></section>
+
+<section id="components"><div class="wrap">
+  <h2>Components</h2>
+  <p class="lead">Reusable pieces used across both homepage concepts.</p>
+  <div class="cols">
+    <div class="demo"><h3>Status badge</h3><span class="badge"><i></i>Investigational device · Clinical evaluation in progress</span><p class="cap">Used once per page, near the hero.</p></div>
+    <div class="demo tint"><h3>Card</h3><article class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div><h3>Oncologists and care teams</h3><p>Review the device and the clinical evaluation in progress.</p></article></div>
+    <div class="demo tint"><h3>Step tab</h3><div class="row"><div class="tab on"><span class="n">1</span>Sense</div><div class="tab"><span class="n">2</span>Adapt</div></div><p class="cap">Selected and default. Arrow keys move between tabs.</p></div>
+    <div class="demo"><h3>Navigation link</h3><div class="nav-s"><span class="cur">How it works</span><span>Our story</span><span>Why trust us</span></div><p class="cap">Current page gets a 2px teal underline.</p></div>
+    <div class="demo dark"><h3>Sourced statistic</h3><div class="stat">80%</div><p class="cap" style="font-size:.9rem">Always show the figure, a plain sentence and a source link. No statistic without a source.</p></div>
+    <div class="demo"><h3>Credential item</h3><p class="t-small">Icon in teal ink, 18px, 2px stroke, with a short factual label: ISO 13485:2016 certified. Never imply approval that is still in progress.</p></div>
+  </div>
+</div></section>
+
+<section id="motion"><div class="wrap">
+  <h2>Visuals and motion</h2>
+  <div class="cols" style="margin-top:1.4rem">
+    <div class="demo"><h3>Imagery</h3><p class="t-small">Use approved product photography and realistic oncology settings. No distressing patient images, no invented hardware, no generic wellness stock. Where a photo is missing, use a dashed placeholder labelled with its subject.</p></div>
+    <div class="demo"><h3>Icons and data graphics</h3><p class="t-small">Rounded line icons, 2px stroke, 24px grid. Data graphics are restrained: one teal line on navy, labelled "Illustrative" unless it is real, approved data.</p></div>
+    <div class="demo"><h3>Motion</h3><p class="t-small">One orchestrated moment per page: the heartbeat trace draws in over about 4 seconds. Hover and focus changes take 200ms. Everything respects reduced-motion settings and nothing autoplays with sound.</p></div>
+    <div class="demo"><h3>Accessibility floor</h3><p class="t-small">Visible keyboard focus on every control, skip link, 48px tap targets, semantic headings, alt text or aria-labels on every graphic, colour never the only signal, tested at 200% zoom.</p></div>
+  </div>
+</div></section>
+
+<section id="language"><div class="wrap">
+  <h2>Language and claims</h2>
+  <p class="lead">Clinical and evidence-conscious, calm, never sensational. HRV is a physiological signal used for adaptation, not a diagnosis of emotion.</p>
+  <div class="dd">
+    <div class="do"><h3>Use</h3><ul><li>“Investigational HRV-adaptive music therapy device”</li><li>“Designed to support anxiety management in oncology care”</li><li>“CDSCO Class B licensing in progress”</li><li>“ISO 13485:2016 certified” (quality management certification)</li><li>“Illustrative graphic. Not patient data.”</li></ul></div>
+    <div class="dont"><h3>Avoid unless an approved Skitii source supports it</h3><ul><li>FDA approved, CE certified, or any approval not yet granted</li><li>“Reduces anxiety”, “proven”, “guaranteed”, “zero side effects”</li><li>“Detects emotion” or “diagnoses stress”</li><li>Cure, treat or prevent claims</li><li>Statistics with no source link</li></ul></div>
+  </div>
+</div></section>
+
+<section id="tokens"><div class="wrap">
+  <h2>Tokens for developers</h2>
+  <p class="lead">Drop these into the shared stylesheet. Components read from them and never use raw values.</p>
+<pre>:root{
+  --navy:#142C46;  --teal:#17A9A0;  --aqua:#E8F7F5;  --white:#FFFFFF;  --slate:#536477;
+  --teal-ink:#0C6F69;  --teal-lt:#7FE0D8;  --teal-hv:#2BC0B6;  --mute:#C6D3E0;
+  --line:#D5E3E8;  --edge:#2A4663;  --field:#7B91A0;  --error:#B3261E;
+  --font:Manrope,Inter,system-ui,sans-serif;
+  --r-input:12px;  --r-card:14px;  --r-panel:24px;  --r-pill:999px;
+  --content:1160px;  --gutter:2.5rem;
+}</pre>
+</div></section>
+</main>
+<footer><div class="wrap">Skitii design system v1.0. Assessment concept using public content and the candidate brand guide only. Not approval to update the live website.</div></footer>
+</body>
+</html>
