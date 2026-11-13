@@ -1,0 +1,7 @@
+/* Skitii | buttons.css */
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.7rem 1.5rem;border-radius:var(--r-sm);font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.btn-primary{background:var(--teal);color:var(--navy)}
+.btn-primary:hover{background:#2BC0B6;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-ghost:hover{background:var(--aqua)}

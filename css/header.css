@@ -1,0 +1,12 @@
+/* Skitii | header.css */
+/* Header */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:-.02em}
+.logo svg{width:32px;height:32px}
+.logo sup{font-size:.55em;color:var(--slate);font-weight:600}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--slate);padding:.5rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{color:var(--navy);border-color:var(--teal)}
+.menu-btn{display:none;min-width:48px;min-height:48px;border:1.5px solid var(--navy);background:none;border-radius:12px;cursor:pointer;color:var(--navy)}
+.nav-cta{display:inline-flex}

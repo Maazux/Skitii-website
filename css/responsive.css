@@ -1,0 +1,64 @@
+/* Skitii | responsive.css */
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pulse{50%{opacity:.35;transform:scale(.8)}}
+
+/* Tablet */
+@media (max-width:960px){
+  .hero-grid,.flow{grid-template-columns:1fr}
+  h1{max-width:18ch}
+  [role=tablist]{grid-template-columns:repeat(3,1fr)}
+  [role=tab]{grid-template-columns:1fr;justify-items:start;text-align:left}
+}
+/* Mobile */
+@media (max-width:720px){
+  .menu-btn{display:grid;place-items:center}
+  .nav-cta{display:none}
+  nav{position:absolute;inset:72px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:.5rem 1.25rem 1.25rem}
+  nav[hidden]{display:none}
+  nav ul{flex-direction:column;gap:0}
+  nav a{display:block;padding:1rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .cta-row .btn{width:100%}
+  [role=tablist]{grid-template-columns:1fr}
+  [role=tab]{grid-template-columns:44px 1fr;align-items:center}
+  .chips{grid-template-columns:1fr}
+  .chip{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .chip b,.chip span{display:inline}
+}
+@media (min-width:721px){nav[hidden]{display:block}}
+/* Mobile pass */
+html{scroll-padding-top:84px}
+body{overflow-x:clip}
+.dock{display:none}
+@media (max-width:720px){
+  body{padding-bottom:88px}
+  .wrap{width:min(1160px,100% - 2rem)}
+  .bar{min-height:64px}
+  nav{inset:64px 0 auto 0;max-height:calc(100vh - 64px);overflow:auto}
+  .badge{display:flex;border-radius:14px;line-height:1.4;padding:.5rem .9rem}
+  h1{font-size:2.15rem;max-width:none;margin:1rem 0}
+  .hero{padding:1.75rem 0 2.5rem}
+  .cta-row{margin:1.5rem 0}
+  .proof{flex-direction:column;gap:.7rem}
+  .signal{border-radius:20px}
+  .note{font-size:.8rem}
+  .sec,.works{padding:3rem 0}
+  .sec h2,.works h2,.cta-band h2{font-size:1.6rem}
+  [role=tablist]{grid-template-columns:repeat(3,1fr);gap:.5rem}
+  [role=tab]{grid-template-columns:1fr;justify-items:center;text-align:center;padding:.7rem .4rem;min-height:84px;gap:.4rem}
+  [role=tab] .n{width:34px;height:34px}
+  [role=tab] small{display:none}
+  [role=tab] strong{font-size:1rem}
+  [role=tabpanel]{padding:1.2rem}
+  [role=tabpanel] h3{font-size:1.25rem}
+  .art svg text{display:none}
+  .devices .ph{font-size:.68rem;padding:.4rem}
+  .devices figcaption{font-size:.8rem}
+  .quote{max-width:none}
+  .facts{gap:0}
+  .form{padding:1.2rem;border-radius:20px}
+  .foot a{display:inline-block;padding:.4rem 0}
+  .dock{display:block;position:fixed;inset:auto 0 0 0;z-index:9;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);transition:transform .25s,visibility 0s}
+  .dock .btn{width:100%}
+  .dock.off{transform:translateY(110%);visibility:hidden;transition:transform .25s,visibility 0s .25s}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.trace.go path{stroke-dasharray:none}}

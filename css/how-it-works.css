@@ -1,0 +1,22 @@
+/* Skitii | how-it-works.css */
+/* How it works */
+.works{padding:clamp(3.5rem,8vw,6.5rem) 0}
+.works h2,.cta-band h2{font-size:var(--step-2);letter-spacing:-.025em;line-height:1.15;max-width:22ch}
+.works .sub{color:var(--slate);max-width:60ch;margin:.9rem 0 2.5rem}
+.flow{display:grid;grid-template-columns:minmax(260px,.8fr) 1.2fr;gap:clamp(1.5rem,4vw,3rem);align-items:stretch}
+[role=tablist]{display:grid;gap:.8rem;align-content:start}
+[role=tab]{display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:center;text-align:left;font:inherit;color:var(--navy);background:#fff;border:1.5px solid var(--line);border-radius:var(--r-md);padding:1rem 1.1rem;min-height:72px;cursor:pointer;transition:border-color .2s,background .2s}
+[role=tab] .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--aqua);color:var(--teal-ink)}
+[role=tab] strong{display:block;font-size:1.1rem}
+[role=tab] small{color:var(--slate);font-size:var(--step--1)}
+[role=tab][aria-selected=true]{border-color:var(--teal);background:var(--aqua)}
+[role=tab][aria-selected=true] .n{background:var(--navy);color:#fff}
+[role=tabpanel]{background:var(--aqua);border-radius:var(--r-lg);padding:clamp(1.4rem,3vw,2.4rem);display:grid;gap:1.4rem;align-content:start}
+[role=tabpanel][hidden]{display:none}
+[role=tabpanel] h3{font-size:1.5rem;letter-spacing:-.02em;line-height:1.2}
+[role=tabpanel] p{color:var(--slate);max-width:56ch}
+.art{background:#fff;border-radius:var(--r-md);padding:1rem;border:1px solid var(--line)}
+.art svg{width:100%;height:auto;display:block}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;color:var(--teal-ink);background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:.25rem .8rem;width:fit-content}
+.loop{display:flex;align-items:center;gap:.8rem;margin-top:2rem;color:var(--slate);font-size:var(--step--1);font-weight:600}
+.loop svg{width:22px;height:22px;flex:none;color:var(--teal-ink)}

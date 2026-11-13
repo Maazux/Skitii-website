@@ -1,0 +1,29 @@
+/* Skitii | hero.css */
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--aqua),var(--white) 85%);padding:clamp(2.5rem,6vw,5.5rem) 0 clamp(2.5rem,5vw,4.5rem)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:.35rem .9rem;font-size:var(--step--1);font-weight:600;color:var(--slate)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+h1{font-size:var(--step-4);line-height:1.06;letter-spacing:-.035em;font-weight:800;margin:1.2rem 0 1.1rem;max-width:15ch}
+.lede{color:var(--slate);max-width:52ch;font-size:clamp(1.05rem,1rem + .3vw,1.25rem)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin:2rem 0 1.8rem}
+.proof{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;list-style:none;padding:0;font-size:var(--step--1);font-weight:600;color:var(--slate)}
+.proof li{display:flex;gap:.5rem;align-items:center}
+.proof svg{width:18px;height:18px;flex:none}
+
+/* Signal card (hero visual) */
+.signal{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:clamp(1.2rem,3vw,2rem);box-shadow:0 30px 60px -30px rgba(20,44,70,.55);position:relative;overflow:hidden}
+.signal::after{content:"";position:absolute;inset:auto -20% -40% auto;width:70%;aspect-ratio:1;background:radial-gradient(circle,rgba(23,169,160,.35),transparent 65%);pointer-events:none}
+.signal-top{display:flex;justify-content:space-between;align-items:center;font-size:var(--step--1);color:#B8C7D6;font-weight:600}
+.live{display:flex;align-items:center;gap:.5rem;color:#fff}
+.live i{width:9px;height:9px;border-radius:50%;background:var(--teal);animation:pulse 1.8s infinite}
+.trace-wrap{margin:1.4rem 0 1rem}
+svg.trace{width:100%;height:auto;display:block}
+.trace path{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.trace .grid line{stroke:#2A4663;stroke-width:1}
+.trace.go path{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 3.1s cubic-bezier(.4,0,.2,1) forwards}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.chip{background:rgba(255,255,255,.07);border:1px solid #2A4663;border-radius:var(--r-md);padding:.7rem .8rem;font-size:var(--step--1);line-height:1.35}
+.chip b{display:block;color:#fff;font-size:.95rem}
+.chip span{color:#B8C7D6}
+.note{font-size:.78rem;color:#B8C7D6;margin-top:.9rem}

@@ -1,0 +1,9 @@
+/* Skitii | tokens.css */
+:root{
+  --navy:#142C46; --teal:#17A9A0; --teal-ink:#0C6F69; --aqua:#E8F7F5; --white:#fff; --slate:#536477;
+  --line:#D5E3E8; --r-lg:24px; --r-md:14px; --r-sm:999px;
+  --step--1:clamp(.82rem,.8rem + .1vw,.9rem); --step-0:clamp(1rem,.96rem + .2vw,1.125rem);
+  --step-2:clamp(1.5rem,1.3rem + 1vw,2.1rem); --step-4:clamp(2.2rem,1.4rem + 4vw,4rem);
+}
+
+:root{--mute:#C6D3E0;--edge:#2A4663;--teal-lt:#7FE0D8;--teal-hv:#2BC0B6}
