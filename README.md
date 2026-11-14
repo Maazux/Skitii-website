@@ -31,6 +31,9 @@ Skip link, semantic landmarks and headings, visible keyboard focus, arrow-key ta
 ## Images
 All images in `assets/img/` come from the public skitii.com site, the supplied assets, or AI-generated concept imagery (the Record photo). Swap in approved, consented photography before any real launch.
 
+## Updating and caching
+CSS, JS and logo links carry a version tag (`?v=20261114`). When you change a CSS or JS file, change that tag in `index.html` so browsers fetch the new file. `vercel.json` makes CSS and JS revalidate on every load, so old styles are not served after a deploy.
+
 ## Logos
 Official files: `assets/skitii-logo.png` (colored, for light backgrounds) and `assets/skitii-logo-white.png` (for dark backgrounds). Both are used at their natural proportions with `width: auto`, so they are never stretched.
 
