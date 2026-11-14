@@ -45,8 +45,8 @@ footer .foot{border-bottom-color:var(--edge)}
 footer .foot h3{color:#fff}
 footer .foot a,footer a{color:var(--mute)}
 footer .foot a:hover{color:#fff}
-.x-flogo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.35rem;letter-spacing:-.02em;color:#fff}
-.x-flogo svg{width:32px;height:32px}.x-flogo sup{font-size:.55em;color:var(--mute);font-weight:600}
+.footer-logo{display:block;height:64px;width:auto}
+@media (max-width:720px){.footer-logo{height:56px}}
 /* Stat odometer */
 .stat .odo{display:inline-flex;align-items:flex-start}
 .stat .d{display:inline-block;height:1em;min-width:.62em;overflow:hidden;text-align:center;font-variant-numeric:tabular-nums}

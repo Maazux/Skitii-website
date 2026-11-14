@@ -31,11 +31,14 @@ Skip link, semantic landmarks and headings, visible keyboard focus, arrow-key ta
 ## Images
 All images in `assets/img/` come from the public skitii.com site, the supplied assets, or AI-generated concept imagery (the Record photo). Swap in approved, consented photography before any real launch.
 
+## Logos
+Official files: `assets/skitii-logo.png` (colored, for light backgrounds) and `assets/skitii-logo-white.png` (for dark backgrounds). Both are used at their natural proportions with `width: auto`, so they are never stretched.
+
 ## Motion (from the Figma prototype)
 Hero trace draws in over about 3.1s. The two stats roll like odometers over 1.25s when scrolled into view. Step and device photos zoom slowly on hover (1.25s). Buttons and founder cards respond over 0.3s. All motion is disabled for reduced-motion users.
 
 ## Placeholders to replace
-Logo mark (swap in the official asset) and the Record-step copy. The enquiry form is a client-side prototype and sends nothing.
+the Record-step copy. The enquiry form is a client-side prototype and sends nothing.
 
 ## Content notes
 - Wording follows the investigational, evidence-conscious language in the brand guide. No approval or outcome claims are made.
